@@ -1,0 +1,12 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1212
+
+When one writes a header file for C/C++, compile errors will occur if the same header script is included more than once. A common solution is to add
+     #ifndef FILENAME_H
+     #define FILENAME_H
+to the start of a file, and
+     #endif
+to the end. This solves the problem.
+
+However this is mechanical and routine. So the computer should do it. So here's a script to do it.
+
+It will add those lines to the top of the file you call it in. It will change FILENAME to be the uppercase name of that file, ommiting the file extension. It will not (yet) check to see if a #define/#ifndef/#endif black has already been added. It will not check the filename, so it can be called on anyfile.
